@@ -137,3 +137,10 @@ Exploratory Data Analysis (EDA) is a crucial step in any data analysis project. 
    - Iterative analysis: Repeating the EDA process iteratively to gain deeper insights or explore different perspectives.
 
 These tasks are not exhaustive, and the specific steps of EDA can vary depending on the nature of the dataset and the research or business objectives. Python's flexibility, along with its rich ecosystem of data analysis libraries, provides a wide range of tools and techniques to conduct comprehensive EDA.
+
+4) Personal experience with solving big data:
+
+Chua co co hoi duoc thuc hien nhung du an thuc te co data len den TB, nhung toi co kien thuc ve su ly so lieu voi big data. 
+
+Cu the la... Pyspark
+Du an co so lieu lon nhat da tung la: du lieu ve credit card cua 10.000 khach hang credit card. Toi su dung Python,... lam sach du lieu nhu the nao, chay model ntn de du bao cai gi?
