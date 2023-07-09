@@ -103,3 +103,37 @@ When working with large-scale data on the order of several terabytes (TB) in Pyt
 By utilizing PySpark and Spark's distributed computing capabilities, you can efficiently process and sort large-scale data that may not fit into memory. Spark's ability to distribute the computation across a cluster of machines allows it to handle datasets on the order of several terabytes or even larger.
 
 Remember to adjust the file paths, data processing operations, and sorting key functions according to your specific dataset and requirements. Additionally, you may need to configure Spark's cluster settings, such as the number of executors, memory allocation, and parallelism, to optimize the performance for your specific environment.
+
+Exploratory Data Analysis (EDA) is a crucial step in any data analysis project. It involves exploring and understanding the data before applying any modeling or statistical techniques. Python, along with libraries such as Pandas, NumPy, Matplotlib, and Seaborn, provides a powerful ecosystem for performing EDA. Here are some common tasks performed during EDA using Python:
+
+## 3) EDA step by step:
+1. Data Cleaning and Preprocessing:
+   - Handling missing values: Identifying and dealing with missing or null values in the dataset.
+   - Handling duplicates: Detecting and removing duplicate records from the dataset.
+   - Data transformation: Applying transformations like normalization, scaling, or encoding categorical variables.
+
+2. Data Visualization:
+   - Univariate analysis: Plotting histograms, bar charts, or box plots to examine individual variables' distributions and identify outliers.
+   - Bivariate analysis: Creating scatter plots, line plots, or box plots to explore relationships between pairs of variables.
+   - Multivariate analysis: Visualizing relationships between multiple variables using heatmaps, pair plots, or parallel coordinates.
+
+3. Descriptive Statistics:
+   - Summary statistics: Calculating measures such as mean, median, mode, standard deviation, or percentiles to summarize numerical variables.
+   - Cross-tabulation: Generating frequency tables or cross-tabulations to examine relationships between categorical variables.
+   - Correlation analysis: Calculating correlation coefficients to quantify relationships between pairs of variables.
+
+4. Data Exploration:
+   - Feature engineering: Creating new features or derived variables from existing ones that might be more informative for analysis or modeling.
+   - Outlier detection: Identifying and handling outliers that can affect the analysis or modeling results.
+   - Data segmentation: Splitting the data into subsets based on specific criteria or segments for more focused analysis.
+
+5. Hypothesis Testing:
+   - Conducting statistical tests: Performing tests such as t-tests, chi-square tests, or ANOVA to evaluate hypotheses or compare groups.
+   - Confidence intervals: Computing confidence intervals to estimate the range of plausible values for population parameters.
+
+6. Data Insights and Communication:
+   - Summarizing findings: Interpreting the results of the analysis and drawing meaningful insights from the data.
+   - Data storytelling: Communicating the findings effectively through visualizations, reports, or presentations.
+   - Iterative analysis: Repeating the EDA process iteratively to gain deeper insights or explore different perspectives.
+
+These tasks are not exhaustive, and the specific steps of EDA can vary depending on the nature of the dataset and the research or business objectives. Python's flexibility, along with its rich ecosystem of data analysis libraries, provides a wide range of tools and techniques to conduct comprehensive EDA.
