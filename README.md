@@ -53,3 +53,53 @@ Remember to adjust the file paths, data loading options, and the specific EDA te
 PySpark's distributed computing framework allows you to handle large-scale data efficiently by distributing the processing across a cluster of machines. This way, you can perform comprehensive EDA on large-scale datasets that may not fit into memory.
 
 Note that the exact steps and techniques may vary depending on your specific dataset, available resources, and analysis requirements. Additionally, consider optimizing Spark's cluster settings, such as the number of executors, memory allocation, and parallelism, to achieve the best performance for your particular environment.
+
+## 2) How to processing and sorting of large-scale data up to several TB scale using python
+When working with large-scale data on the order of several terabytes (TB) in Python, the traditional approach of loading the entire dataset into memory may not be feasible. In such cases, you can leverage distributed computing frameworks like Apache Spark, which seamlessly integrates with Python through the PySpark library. Here's an outline of how you can process and sort large-scale data up to several TB scale using Python and PySpark:
+
+1. Set up PySpark and Spark Context:
+   - Install PySpark by running `pip install pyspark` in your Python environment.
+   - Import the necessary PySpark modules:
+     ```python
+     from pyspark import SparkConf, SparkContext
+     ```
+
+2. Create a Spark Context:
+   - Configure the Spark application:
+     ```python
+     conf = SparkConf().setAppName("LargeScaleDataProcessing")
+     sc = SparkContext(conf=conf)
+     ```
+
+3. Load and Process the Data:
+   - Read the large-scale data using Spark's RDD (Resilient Distributed Dataset):
+     ```python
+     data = sc.textFile('large_data.txt')  # Replace with the path to your large-scale data file
+     ```
+
+   - Process the data by applying transformations on the RDD, such as filtering, mapping, or aggregating operations. For example, to filter rows based on a condition:
+     ```python
+     filtered_data = data.filter(lambda row: condition(row))
+     ```
+
+4. Sort the Data:
+   - Use the `sortBy()` or `sortByKey()` function on the RDD to sort the data. This operation can be memory-intensive, but Spark efficiently handles large-scale sorting through its distributed processing capabilities. For example, to sort the data in ascending order:
+     ```python
+     sorted_data = filtered_data.sortBy(lambda row: sort_key(row), ascending=True)
+     ```
+
+5. Save the Sorted Data:
+   - If you want to save the sorted data to a new file, you can use the `saveAsTextFile()` function:
+     ```python
+     sorted_data.saveAsTextFile('sorted_data.txt')  # Replace with the desired output path
+     ```
+
+6. Terminate the Spark Context:
+   - Once you have completed the processing, make sure to stop the Spark Context to release the resources:
+     ```python
+     sc.stop()
+     ```
+
+By utilizing PySpark and Spark's distributed computing capabilities, you can efficiently process and sort large-scale data that may not fit into memory. Spark's ability to distribute the computation across a cluster of machines allows it to handle datasets on the order of several terabytes or even larger.
+
+Remember to adjust the file paths, data processing operations, and sorting key functions according to your specific dataset and requirements. Additionally, you may need to configure Spark's cluster settings, such as the number of executors, memory allocation, and parallelism, to optimize the performance for your specific environment.
