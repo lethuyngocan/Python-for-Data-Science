@@ -137,7 +137,56 @@ Exploratory Data Analysis (EDA) is a crucial step in any data analysis project. 
    - Iterative analysis: Repeating the EDA process iteratively to gain deeper insights or explore different perspectives.
 
 These tasks are not exhaustive, and the specific steps of EDA can vary depending on the nature of the dataset and the research or business objectives. Python's flexibility, along with its rich ecosystem of data analysis libraries, provides a wide range of tools and techniques to conduct comprehensive EDA.
+## 4) Methods you can use to remove outlier data in Python
+There are several methods you can use to remove outlier data in Python. Here are a few commonly used techniques:
 
+1. Z-Score Method:
+   - Calculate the Z-score for each data point, which measures how many standard deviations a data point is away from the mean.
+   - Set a threshold value (e.g., Z-score greater than 3 or less than -3) to identify outliers.
+   - Remove the data points that exceed the threshold.
+   ```python
+   import numpy as np
+
+   def remove_outliers_zscore(data, threshold=3):
+       z_scores = np.abs((data - np.mean(data)) / np.std(data))
+       outliers = np.where(z_scores > threshold)
+       cleaned_data = data[~np.isin(np.arange(len(data)), outliers)]
+       return cleaned_data
+   ```
+
+2. IQR (Interquartile Range) Method:
+   - Calculate the IQR, which is the range between the 25th and 75th percentiles of the data.
+   - Define a threshold (e.g., 1.5 times the IQR) to identify outliers.
+   - Remove the data points that fall outside the threshold.
+   ```python
+   def remove_outliers_iqr(data, threshold=1.5):
+       q1 = np.percentile(data, 25)
+       q3 = np.percentile(data, 75)
+       iqr = q3 - q1
+       lower_bound = q1 - (threshold * iqr)
+       upper_bound = q3 + (threshold * iqr)
+       outliers = np.where((data < lower_bound) | (data > upper_bound))
+       cleaned_data = data[~np.isin(np.arange(len(data)), outliers)]
+       return cleaned_data
+   ```
+
+3. Tukey's Fences Method:
+   - Similar to the IQR method, calculate the IQR of the data.
+   - Define lower and upper fences as Q1 - (1.5 * IQR) and Q3 + (1.5 * IQR), respectively.
+   - Remove the data points that fall outside the fences.
+   ```python
+   def remove_outliers_tukey(data):
+       q1 = np.percentile(data, 25)
+       q3 = np.percentile(data, 75)
+       iqr = q3 - q1
+       lower_fence = q1 - (1.5 * iqr)
+       upper_fence = q3 + (1.5 * iqr)
+       outliers = np.where((data < lower_fence) | (data > upper_fence))
+       cleaned_data = data[~np.isin(np.arange(len(data)), outliers)]
+       return cleaned_data
+   ```
+
+These are just a few approaches to remove outliers in Python. The specific method you choose depends on the characteristics of your data and the requirements of your analysis. It's important to carefully consider the impact of outlier removal on your analysis and ensure that it aligns with the context and goals of your project.
 4) Personal experience with solving big data:
 
 Chua co co hoi duoc thuc hien nhung du an thuc te co data len den TB, nhung toi co kien thuc ve su ly so lieu voi big data. 
