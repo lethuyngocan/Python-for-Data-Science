@@ -104,9 +104,10 @@ By utilizing PySpark and Spark's distributed computing capabilities, you can eff
 
 Remember to adjust the file paths, data processing operations, and sorting key functions according to your specific dataset and requirements. Additionally, you may need to configure Spark's cluster settings, such as the number of executors, memory allocation, and parallelism, to optimize the performance for your specific environment.
 
-Exploratory Data Analysis (EDA) is a crucial step in any data analysis project. It involves exploring and understanding the data before applying any modeling or statistical techniques. Python, along with libraries such as Pandas, NumPy, Matplotlib, and Seaborn, provides a powerful ecosystem for performing EDA. Here are some common tasks performed during EDA using Python:
 
 ## 3) EDA step by step:
+Exploratory Data Analysis (EDA) is a crucial step in any data analysis project. It involves exploring and understanding the data before applying any modeling or statistical techniques. Python, along with libraries such as Pandas, NumPy, Matplotlib, and Seaborn, provides a powerful ecosystem for performing EDA. Here are some common tasks performed during EDA using Python:
+
 1. Data Cleaning and Preprocessing:
    - Handling missing values: Identifying and dealing with missing or null values in the dataset.
    - Handling duplicates: Detecting and removing duplicate records from the dataset.
