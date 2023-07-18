@@ -1,6 +1,6 @@
 
 ## Python for Data Science: 
- Python stands out as an excellent choice for aspiring data scientists, providing a user-friendly yet powerful environment for performing data analysis, machine learning, and other data science tasks: 
+Python stands out as an excellent choice for aspiring data scientists, providing a user-friendly yet powerful environment for performing data analysis, machine learning, and other data science tasks: 
 
 1. Simplicity and Readability: Python has a clean and easy-to-understand syntax, making it one of the most beginner-friendly programming languages.
    
